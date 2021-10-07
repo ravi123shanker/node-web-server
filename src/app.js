@@ -2,6 +2,9 @@ const path=require('path');
 const express=require('express');
 
 const app=express();
+
+const port=process.env.PORT || 9000;
+
 const publicPath=path.join(__dirname, '../public');
 const viewsPath=path.join(__dirname, './templates');
 
@@ -19,6 +22,6 @@ app.get('/help', (req, res)=>{
     res.render('help');
 })
 
-app.listen(9000, ()=>{
-    console.log("Node server is up and running on port: 9000");
+app.listen(port, ()=>{
+    console.log("Node server is up and running on port: ", port);
 })
